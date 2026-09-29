@@ -1,1 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aman Kumar — E-commerce & Performance Marketing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-deep:#071528;
+    --gold:#E8A33D;
+    --ivory:#F7F5F0;
+    --slate:#5B6579;
+    --green:#2F8F5B;
+    --red:#B8453B;
+    --line:#DAD5C9;
+    --card:#FFFFFF;
+    --shopify:#008060;
+    --google:#4285F4;
+    --meta:#0668E1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--navy-deep);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:980px;margin:0 auto;padding:0 0 60px;}
 
+  /* HEADER */
+  header{
+    background:var(--navy);
+    color:var(--ivory);
+    padding:44px 48px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute; right:-60px; top:-60px;
+    width:280px; height:280px; border-radius:50%;
+    background:radial-gradient(circle, rgba(232,163,61,0.18) 0%, transparent 70%);
+  }
+  .head-row{display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;}
+  .name{
+    font-family:'Fraunces',serif; font-weight:600; font-size:42px; letter-spacing:-0.5px; margin:0;
+  }
+  .role{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--gold); margin-top:6px;
+  }
+  .contact{font-size:13.5px; line-height:1.9; color:#C9D2E3; margin-top:18px;}
+  .tag{
+    text-align:right; font-family:'Fraunces',serif; font-style:italic; font-size:15px; color:var(--gold);
+    max-width:300px;
+  }
+  .intro{
+    font-size:15.5px; line-height:1.7; color:var(--slate); padding:26px 48px 8px; max-width:900px;
+  }
+
+  /* SECTION HEADERS */
+  .section{padding:0 48px; margin-top:38px;}
+  .section-head{
+    display:flex; align-items:center; gap:14px; margin-bottom:18px; flex-wrap:wrap;
+  }
+  .platform-badge{
+    background:var(--navy); color:#fff; font-family:'Fraunces',serif; font-weight:600; font-size:20px;
+    padding:8px 16px; border-radius:4px;
+  }
+  .platform-badge.amazon{background:#111;}
+  .platform-badge.shopify{background:var(--shopify);}
+  .platform-badge.performance{background:var(--navy-deep); border:1px solid var(--gold); color:var(--gold);}
+  .section-desc{font-size:13px; color:var(--slate); line-height:1.5;}
+
+  /* LEDGER */
+  .ledger{
+    border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--card);
+  }
+  .ledger-bar{
+    display:flex; height:34px; background:#EFEBE0; border-bottom:1px solid var(--line);
+  }
+  .ledger-bar div{
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--navy);
+    border-right:1px solid var(--line); letter-spacing:0.5px;
+  }
+  .ledger-bar div:last-child{border-right:none;}
+  .ledger-cols{display:flex;}
+  .col{
+    padding:18px 16px; border-right:1px solid var(--line);
+  }
+  .col:last-child{border-right:none;}
+  .col-label{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--slate); letter-spacing:1px; text-transform:uppercase; margin-bottom:10px;
+  }
+  .metric-row{display:flex; justify-content:space-between; align-items:baseline; padding:5px 0; border-bottom:1px dashed var(--line); font-size:13px;}
+  .metric-row:last-child{border-bottom:none;}
+  .metric-row .k{color:var(--slate);}
+  .metric-row .v{font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--navy-deep);}
+  .v.pos{color:var(--green);}
+  .v.neg{color:var(--red);}
+
+  /* GROWTH STRIP */
+  .growth-strip{
+    display:flex; gap:16px; margin-top:16px; flex-wrap:wrap;
+  }
+  .growth-card{
+    flex:1; min-width:220px; background:var(--navy); color:#fff; border-radius:6px; padding:18px 20px;
+  }
+  .growth-card .big{font-family:'Fraunces',serif; font-size:34px; font-weight:600; color:var(--gold);}
+  .growth-card .lbl{font-size:12px; color:#C9D2E3; margin-top:4px; line-height:1.5;}
+  .growth-card.alt{background:var(--card); color:var(--navy-deep); border:1px solid var(--line);}
+  .growth-card.alt .big{color:var(--navy);}
+  .growth-card.alt .lbl{color:var(--slate);}
+
+  .note{
+    font-size:12px; color:var(--slate); margin-top:14px; padding:12px 16px; background:#FBF6E9;
+    border-left:3px solid var(--gold); border-radius:2px; line-height:1.6;
+  }
+  .note b{color:var(--navy-deep);}
+  .note.verified{background:#EEF6F1; border-left-color:var(--green);}
+  .source-tag{
+    display:inline-flex; align-items:center; gap:5px; font-family:'IBM Plex Mono',monospace;
+    font-size:10px; letter-spacing:0.5px; color:var(--green); margin-top:8px; text-transform:uppercase;
+  }
+  .source-tag::before{content:"✓"; font-weight:700;}
+
+  /* STAT ROW */
+  .stat-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:18px;}
+  .stat{flex:1; min-width:190px; background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 18px;}
+  .stat .num{font-family:'Fraunces',serif; font-size:26px; font-weight:600; color:var(--navy);}
+  .stat .lbl{font-size:11.5px; color:var(--slate); text-transform:uppercase; letter-spacing:0.5px; margin-top:4px;}
+
+  /* HIGHLIGHTS */
+  .highlights{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:20px;}
+  .h-card{background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px;}
+  .h-card .h-title{font-size:12px; font-weight:700; letter-spacing:0.5px; color:var(--navy); text-transform:uppercase; margin-bottom:6px;}
+  .h-card p{font-size:12.5px; color:var(--slate); line-height:1.55; margin:0;}
+
+  /* EVIDENCE GALLERY */
+  .evidence{
+    background:var(--card); border:1px solid var(--line); border-radius:6px; padding:20px;
+  }
+  .evidence-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:14px;
+  }
+  .evidence-grid.three-col{
+    grid-template-columns:repeat(3,1fr);
+  }
+  .evidence-item{
+    border:1px solid var(--line); border-radius:6px; overflow:hidden; background:#FAFAF7;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .evidence-item img{
+    width:100%; height:195px; object-fit:cover; display:block; border-bottom:1px solid var(--line); cursor:zoom-in;
+    transition:opacity 0.15s ease;
+  }
+  .evidence-item img:hover{opacity:0.9;}
+  .evidence-cap{
+    padding:12px 14px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--slate);
+    line-height:1.5; flex-grow:1;
+  }
+  .evidence-cap b{color:var(--navy-deep); display:block; font-size:12px; margin-bottom:4px;}
+  .evidence-cap .tag-pill{
+    display:inline-block; font-size:9.5px; font-weight:600; text-transform:uppercase;
+    padding:2px 6px; border-radius:3px; background:#EFEBE0; color:var(--navy); margin-bottom:6px;
+  }
+
+  /* SHOPIFY META BOX */
+  .meta-box{
+    background:var(--card); border:1px solid var(--line); border-radius:6px; padding:20px 24px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-top:14px;
+  }
+  .meta-group{display:flex; gap:24px; flex-wrap:wrap;}
+  .meta-cell{display:flex; flex-direction:column;}
+  .meta-cell .m-lbl{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--slate); text-transform:uppercase; letter-spacing:0.5px;}
+  .meta-cell .m-val{font-size:14px; font-weight:600; color:var(--navy-deep); margin-top:2px;}
+  .btn-live{
+    background:var(--shopify); color:#fff; text-decoration:none; padding:10px 18px; border-radius:4px;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; display:inline-flex; align-items:center; gap:8px;
+    transition:background 0.2s ease;
+  }
+  .btn-live:hover{background:#00664d;}
+
+  /* PERFORMANCE MARKETING CASE STUDIES */
+  .case-study-card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px; padding:24px; margin-top:18px;
+  }
+  .cs-header{
+    display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid var(--line); padding-bottom:12px; margin-bottom:16px;
+  }
+  .cs-title-wrap h3{
+    margin:4px 0 0; font-family:'Fraunces',serif; font-size:20px; color:var(--navy-deep);
+  }
+  .badge-platform{
+    font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; text-transform:uppercase;
+    padding:3px 8px; border-radius:3px;
+  }
+  .badge-platform.google{background:#E8F0FE; color:var(--google);}
+  .badge-platform.meta{background:#E7F0FD; color:var(--meta);}
+  .cs-content-grid{
+    display:grid; grid-template-columns:1.2fr 0.8fr; gap:20px; align-items:start;
+  }
+  .cs-breakdown{display:flex; flex-direction:column; gap:12px;}
+  .cs-row strong{font-size:12px; color:var(--navy-deep); display:block; text-transform:uppercase; font-family:'IBM Plex Mono',monospace;}
+  .cs-row p{font-size:13px; color:var(--slate); margin:2px 0 0; line-height:1.5;}
+
+  /* FOOTER */
+  footer{
+    margin-top:44px; background:var(--navy-deep); color:var(--gold);
+    padding:26px 48px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+  footer .quote{font-family:'Fraunces',serif; font-style:italic; font-size:15px; color:#fff;}
+  footer .badges{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1px; color:var(--gold);}
+
+  /* LIGHTBOX */
+  .lightbox{
+    display:none; position:fixed; inset:0; background:rgba(7,21,40,0.95); z-index:9999;
+    align-items:center; justify-content:center; padding:20px; cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:94%; max-height:90vh; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,0.8); object-fit:contain;}
+
+  @media (max-width:768px){
+    .ledger-cols{flex-direction:column;}
+    .ledger-bar{display:none;}
+    .col{border-right:none; border-bottom:1px solid var(--line);}
+    .highlights{grid-template-columns:repeat(2,1fr);}
+    .evidence-grid, .evidence-grid.three-col{grid-template-columns:1fr;}
+    .cs-content-grid{grid-template-columns:1fr;}
+    header{padding:32px 22px;}
+    .section{padding:0 22px;}
+    .intro{padding:22px 22px 0;}
+    footer{padding:22px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="head-row">
+      <div>
+        <h1 class="name">Aman Kumar</h1>
+        <div class="role">E-commerce Manager &bull; Performance Marketer</div>
+        <div class="contact">
+          ak263222@gmail.com &nbsp;&bull;&nbsp; 8178819473 &nbsp;&bull;&nbsp; Delhi, India
+        </div>
+      </div>
+      <div class="tag">Marketplaces &bull; Shopify Operations &bull; Paid Media Growth</div>
+    </div>
+  </header>
+
+  <p class="intro">
+    Multi-channel E-commerce professional with over 4 years of experience orchestrating marketplace growth, live D2C Shopify operations, automated logistics fulfillment, and conversion-focused paid advertising across Google Ads and Meta Ads Manager.
+  </p>
+
+  <!-- FLIPKART EXPERIENCE -->
+  <div class="section">
+    <div class="section-head">
+      <div class="platform-badge">Flipkart</div>
+      <div class="section-desc">Dream Weaverz &bull; end-to-end operations: catalog, pricing, inventory, advertising</div>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-bar" style="display:grid; grid-template-columns: 1fr 2fr 1.17fr;">
+        <div>FY24 &bull; 6 mo (Jul&ndash;Dec 2024)</div>
+        <div>FY25 &bull; 12 mo (Jan&ndash;Dec 2025)</div>
+        <div>FY26 &bull; 7 mo (Jan&ndash;Jul 2026)</div>
+      </div>
+      <div class="ledger-cols" style="display:grid; grid-template-columns: 1fr 2fr 1.17fr;">
+        <div class="col">
+          <div class="col-label">Snapshot</div>
+          <div class="metric-row"><span class="k">Net sales</span><span class="v">₹41,309.00</span></div>
+          <div class="metric-row"><span class="k">Units sold</span><span class="v">84</span></div>
+          <div class="metric-row"><span class="k">Returns (RTV)</span><span class="v neg">11 &bull; 13.1%</span></div>
+          <div class="metric-row"><span class="k">Payment recv.</span><span class="v">₹26,170.13</span></div>
+          <div class="source-tag">OMS Guru report</div>
+        </div>
+        <div class="col">
+          <div class="col-label">Snapshot</div>
+          <div class="metric-row"><span class="k">Net sales</span><span class="v pos">₹64,49,295.43</span></div>
+          <div class="metric-row"><span class="k">Units sold</span><span class="v pos">13,198</span></div>
+          <div class="metric-row"><span class="k">Returns (RTV)</span><span class="v neg">1,593 &bull; 12.1%</span></div>
+          <div class="metric-row"><span class="k">Payment recv.</span><span class="v pos">₹56,50,734.88</span></div>
+          <div class="source-tag">OMS Guru report</div>
+        </div>
+        <div class="col">
+          <div class="col-label">Snapshot</div>
+          <div class="metric-row"><span class="k">Net sales</span><span class="v">₹20,46,704.05</span></div>
+          <div class="metric-row"><span class="k">Units sold</span><span class="v">4,099</span></div>
+          <div class="metric-row"><span class="k">Returns (RTV)</span><span class="v neg">556 &bull; 13.6%</span></div>
+          <div class="metric-row"><span class="k">Payment recv.</span><span class="v">₹17,27,594.78</span></div>
+          <div class="source-tag">OMS Guru report</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="growth-strip">
+      <div class="growth-card">
+        <div class="big">~78x</div>
+        <div class="lbl">Annualized growth, FY24 &rarr; FY25 (like-for-like: FY24's 6-month sales scaled to a 12-month run rate before comparing). Corrects the original "32x" claim.</div>
+      </div>
+      <div class="growth-card alt">
+        <div class="big">~156x</div>
+        <div class="lbl">Raw (unadjusted) growth using figures exactly as reported &mdash; compares a 6-month period against a 12-month one.</div>
+      </div>
+    </div>
+
+    <div class="highlights" style="margin-top:20px;">
+      <div class="h-card"><div class="h-title">Scaled sales sharply</div><p>Net sales grew from ₹41K to ₹64.49L across FY24&rarr;FY25 (~78x on an annualized basis).</p></div>
+      <div class="h-card"><div class="h-title">Units sold</div><p>13,198+ units moved in FY25, up from 84 in the FY24 window.</p></div>
+      <div class="h-card"><div class="h-title">Steady momentum</div><p>₹20.46L in net sales generated in the first 7 months of FY26.</p></div>
+      <div class="h-card"><div class="h-title">Operational focus</div><p>Catalog quality, ads optimization, pricing and inventory planning kept return rates at 12&ndash;14%.</p></div>
+    </div>
+  </div>
+
+  <!-- AMAZON VENDOR CENTRAL -->
+  <div class="section">
+    <div class="section-head">
+      <div class="platform-badge amazon">Amazon Vendor Central</div>
+      <div class="section-desc">Dream Weaverz &bull; vendor operations, purchase orders, inventory planning</div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><div class="num">₹75,45,480.29</div><div class="lbl">Ordered revenue</div></div>
+      <div class="stat"><div class="num">12,254</div><div class="lbl">Ordered units</div></div>
+      <div class="stat"><div class="num">1,517</div><div class="lbl">Unique customers</div></div>
+      <div class="stat"><div class="num">1 Feb &ndash; 1 Aug 2026</div><div class="lbl">Report period</div></div>
+    </div>
+    <div class="source-tag" style="margin-left:2px;">Amazon Vendor Central Sales report, updated 2 Aug 2026</div>
+
+    <div class="highlights" style="margin-top:20px;">
+      <div class="h-card"><div class="h-title">₹75.45 Lakhs</div><p>Total ordered revenue generated across the reporting window.</p></div>
+      <div class="h-card"><div class="h-title">12,254 units</div><p>High-volume order processing across catalog assortment.</p></div>
+      <div class="h-card"><div class="h-title">1,517 customers</div><p>Unique consumer reach maintained through buy-box health.</p></div>
+      <div class="h-card"><div class="h-title">PO Compliance</div><p>Strict SLA compliance, lead-time tracking, and warehouse routing.</p></div>
+    </div>
+  </div>
+
+  <!-- LATEST SHOPIFY PROJECT: INSHINE ORIGINALS -->
+  <div class="section">
+    <div class="section-head">
+      <div class="platform-badge shopify">Latest Shopify Project</div>
+      <div class="section-desc">INSHINE ORIGINALS &bull; Store operations, catalog, discounts, themes, orders &amp; integrations</div>
+    </div>
+
+    <div class="meta-box">
+      <div class="meta-group">
+        <div class="meta-cell">
+          <span class="m-lbl">Brand / Project</span>
+          <span class="m-val">INSHINE ORIGINALS</span>
+        </div>
+        <div class="meta-cell">
+          <span class="m-lbl">Platform</span>
+          <span class="m-val">Shopify D2C</span>
+        </div>
+        <div class="meta-cell">
+          <span class="m-lbl">Industry</span>
+          <span class="m-val">Beauty &amp; Cosmetics</span>
+        </div>
+        <div class="meta-cell">
+          <span class="m-lbl">Role</span>
+          <span class="m-val">Shopify Store Manager</span>
+        </div>
+      </div>
+      <a href="https://inshineoriginals.in/" target="_blank" rel="noopener noreferrer" class="btn-live">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Live Store
+      </a>
+    </div>
+
+    <div class="note verified">
+      <b>Operational Overview:</b> Supported administrative execution for <strong>INSHINE ORIGINALS</strong>: product management, smart collection rules, discount configurations, order pipeline tracking, and logistics connectivity.
+    </div>
+
+    <!-- 9 EVIDENCE CARDS WITH BUILT-IN FALLBACKS -->
+    <div class="evidence" style="margin-top:20px;">
+      <div class="col-label" style="margin-bottom:12px;">Shopify Administrative Dashboard Evidence (Click to Zoom)</div>
+      <div class="evidence-grid three-col">
+
+        <!-- Card 1 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/product-management.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Shopify+Product+Catalog'" onclick="openLightbox(this.src)" alt="Shopify Product Administration">
+          <div class="evidence-cap">
+            <span class="tag-pill">Catalog</span>
+            <b>Product Content &amp; Channels</b>
+            Plum &amp; Sheen Lip Plumping Gloss setup: title, copywriting structure, active status, and sales channel publishing.
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/discounts.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Shopify+Discounts+Admin'" onclick="openLightbox(this.src)" alt="Shopify Discounts Section">
+          <div class="evidence-cap">
+            <span class="tag-pill">Promotions</span>
+            <b>Shopify Discount Rules</b>
+            Administered active discount coupons: FREEMM599 (Spend ₹599 Get 1 Free), FIRST10 (10% Off First Order), and Product Bundle rules.
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/orders.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Shopify+Orders+Dashboard'" onclick="openLightbox(this.src)" alt="Shopify Orders Dashboard">
+          <div class="evidence-cap">
+            <span class="tag-pill">Operations</span>
+            <b>Order &amp; Fulfillment Stream</b>
+            Inbound order tracking (#2121 to #2129), payment verification (Paid), item counts, and FastrrCheckoutV3 channel tracking.
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/sales-channels.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Shiprocket+Sales+Channels'" onclick="openLightbox(this.src)" alt="Connected Sales Channels">
+          <div class="evidence-cap">
+            <span class="tag-pill">Integrations</span>
+            <b>Sales Channel &amp; Inventory Sync</b>
+            Connected INSHINE ORIGINALS (ID: 4287583) to Shiprocket, monitoring live automated sync and fulfillment pipelines.
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/payment-dashboard.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Fastrr+Payment+Snapshot'" onclick="openLightbox(this.src)" alt="Payment Dashboard Snapshot">
+          <div class="evidence-cap">
+            <span class="tag-pill">Checkout</span>
+            <b>Operational Payment Snapshot</b>
+            Fastrr 7-day payment analytics snapshot: ₹1,966 revenue, 15 transactions, 26.0% success rate, and 100% UPI payment share.
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/collections.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Shopify+Collections'" onclick="openLightbox(this.src)" alt="Shopify Collections Management">
+          <div class="evidence-cap">
+            <span class="tag-pill">Navigation</span>
+            <b>Smart Collection Rules</b>
+            Structured catalog discovery across All Products (107 SKUs), Face (43 SKUs), Lips (21 SKUs), and Best Sellers (14 SKUs).
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/store-settings.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Shopify+Store+Settings'" onclick="openLightbox(this.src)" alt="Store Configuration Settings">
+          <div class="evidence-cap">
+            <span class="tag-pill">Administration</span>
+            <b>Store Configuration &amp; Standards</b>
+            Verified administrative parameters for inshineoriginals.in: Indian Rupee (INR) currency setup, metric system, and operational defaults.
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/theme-editor.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Shopify+Theme+Editor'" onclick="openLightbox(this.src)" alt="Theme Customizer & UX">
+          <div class="evidence-cap">
+            <span class="tag-pill">Storefront</span>
+            <b>Theme Customizer &amp; UI</b>
+            Storefront customizer: Free Shipping announcement bar (above ₹699), circular visual navigation categories, and Absolute Matte banner.
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="evidence-item">
+          <img src="assets/shopify/shiprocket-discounts.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Fastrr+Discounts'" onclick="openLightbox(this.src)" alt="Fastrr Checkout Discounts">
+          <div class="evidence-cap">
+            <span class="tag-pill">D2C Checkout</span>
+            <b>Fastrr Promotion Automation</b>
+            Managed 1-click checkout discounts in Fastrr/Shiprocket: FREEMM599 (Free Matte Me Lip Cream on ₹399+) with time scheduling.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PERFORMANCE MARKETING SECTION -->
+  <div class="section">
+    <div class="section-head">
+      <div class="platform-badge performance">Performance Marketing</div>
+      <div class="section-desc">Google Ads &bull; Meta Ads Manager &bull; Full-Funnel Acquisition &bull; Creative A/B Testing</div>
+    </div>
+
+    <!-- 1. GOOGLE ADS CASE STUDY: DEMAND GEN -->
+    <div class="case-study-card">
+      <div class="cs-header">
+        <div class="cs-title-wrap">
+          <span class="badge-platform google"><i class="fa-brands fa-google"></i> Google Ads</span>
+          <h3>Demand Gen &bull; Flood Relief &amp; Cow Seva Conversion Engine</h3>
+        </div>
+        <div class="source-tag">Source Verified</div>
+      </div>
+      <div class="cs-content-grid">
+        <div class="cs-breakdown">
+          <div class="cs-row">
+            <strong>Campaign Setup &amp; Objective</strong>
+            <p>Scaled the <strong>NEW FLOOD DONATION DEM GEN</strong> campaign at <strong>₹12,000.00/day</strong>, using <em>Maximize Conversions</em> bidding and automated view-through conversion tracking across India (English &amp; Hindi)[cite: 15, 16].</p>
+          </div>
+          <div class="cs-row">
+            <strong>Targeting, Placements &amp; Formats</strong>
+            <p>Deployed YouTube Shorts video ads paired with Google Display network assets, utilizing custom copy headlines and donation action buttons[cite: 14, 15].</p>
+          </div>
+          <div class="cs-row">
+            <strong>Performance Optimization &bull; 3.63x ROAS</strong>
+            <p>Delivered <strong>981,730 impressions</strong> and <strong>12,887 clicks</strong> to secure <strong>351.81 online conversions</strong> (₹4,39,932.36 conversion value) at <strong>₹344.22 per acquisition</strong> and <strong>3.63x ROAS</strong>[cite: 16].</p>
+          </div>
+          
+          <!-- Live Metrics Ledger -->
+          <div class="ledger" style="margin-top:4px;">
+            <div class="ledger-cols" style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr;">
+              <div class="col">
+                <div class="col-label">Total Spend</div>
+                <div class="metric-row"><span class="k">Cost</span><span class="v">₹1,21,098.77</span></div>
+                <div class="source-tag">Sep 18–27[cite: 16]</div>
+              </div>
+              <div class="col">
+                <div class="col-label">Delivery</div>
+                <div class="metric-row"><span class="k">Impr.</span><span class="v">9,81,730</span></div>
+                <div class="metric-row"><span class="k">Clicks</span><span class="v">12,887</span></div>
+              </div>
+              <div class="col">
+                <div class="col-label">Engagement</div>
+                <div class="metric-row"><span class="k">CTR</span><span class="v">1.31%</span></div>
+                <div class="metric-row"><span class="k">Avg CPC</span><span class="v">₹9.40</span></div>
+              </div>
+              <div class="col">
+                <div class="col-label">Conversion</div>
+                <div class="metric-row"><span class="k">Value</span><span class="v pos">₹4,39,932</span></div>
+                <div class="metric-row"><span class="k">ROAS</span><span class="v pos">3.63x</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Ads Real Evidence Visuals -->
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="evidence-item">
+            <img src="assets/performance-marketing/google-ads/demand-gen-overview.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Google+Ads+Demand+Gen+Report'" onclick="openLightbox(this.src)" alt="Google Ads Demand Gen Dashboard">
+            <div class="evidence-cap">
+              <span class="tag-pill">Ad Groups</span>
+              <b>Demand Gen Performance &bull; 3.63x ROAS</b>
+              Verified dashboard: ₹1,21,098.77 cost, 981,730 impressions, 12,887 clicks, and ₹4,39,932.36 conversion value[cite: 16].
+            </div>
+          </div>
+          <div class="evidence-item">
+            <img src="assets/performance-marketing/google-ads/demand-gen-creative.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Google+Ads+Creative+Setup'" onclick="openLightbox(this.src)" alt="Demand Gen Video Creative Setup">
+            <div class="evidence-cap">
+              <span class="tag-pill">Ad Formats</span>
+              <b>Video &amp; Display Asset Group Setup</b>
+              Multi-format creative delivery (YouTube Shorts &amp; Display) with high-intent donation call-to-action copy[cite: 14].
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. META ADS CASE STUDY: GUARDIAN OF ANGELS TRUST -->
+    <div class="case-study-card">
+      <div class="cs-header">
+        <div class="cs-title-wrap">
+          <span class="badge-platform meta"><i class="fa-brands fa-meta"></i> Meta Ads Manager</span>
+          <h3>Conversion Funnel &bull; High-Scale Cause &amp; Seva Campaigns</h3>
+        </div>
+        <div class="source-tag">Source Verified</div>
+      </div>
+      <div class="cs-content-grid">
+        <div class="cs-breakdown">
+          <div class="cs-row">
+            <strong>Campaign Architecture &amp; Scale</strong>
+            <p>Managed multiple conversion ad sets for <strong>Guardian of Angels Trust</strong> over a 30-day reporting window (29 Aug – 27 Sep 2026): <em>Monkey Rescue</em>, <em>Gaumata Seva</em>, and <em>Dog Surgery Appeals</em>[cite: 11].</p>
+          </div>
+          <div class="cs-row">
+            <strong>Creative A/B Split Testing (Image vs. Video)</strong>
+            <p>Tested formats inside <code>Monkey-ads-set-11082026 - 6</code>[cite: 12]. The <strong>Image variant</strong> achieved lower acquisition cost (<strong>₹186.09</strong> / 11 donations)[cite: 12], while the <strong>Video creative</strong> captured large volume (<strong>₹12,903.72 spent &bull; 141,310 impressions &bull; 34 donations</strong> at ₹379.52)[cite: 12].</p>
+          </div>
+          <div class="cs-row">
+            <strong>Ad Set Efficiency Highlights</strong>
+            <p>Ad Set 6 generated <strong>45 donation conversions</strong> (44 purchases) from <strong>145,416 impressions</strong> and <strong>121,738 unique reach</strong> with an optimal frequency of <strong>1.19</strong>[cite: 11, 13].</p>
+          </div>
+
+          <!-- Meta Ads Live Metrics Ledger -->
+          <div class="ledger" style="margin-top:4px;">
+            <div class="ledger-cols" style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr;">
+              <div class="col">
+                <div class="col-label">Ad Set Spend</div>
+                <div class="metric-row"><span class="k">Spent</span><span class="v">₹14,950.71</span></div>
+                <div class="source-tag">30-Day Window[cite: 11]</div>
+              </div>
+              <div class="col">
+                <div class="col-label">Audience Scale</div>
+                <div class="metric-row"><span class="k">Reach</span><span class="v">1,21,738</span></div>
+                <div class="metric-row"><span class="k">Impr.</span><span class="v">1,45,416</span></div>
+              </div>
+              <div class="col">
+                <div class="col-label">Delivery Health</div>
+                <div class="metric-row"><span class="k">Freq.</span><span class="v">1.19</span></div>
+                <div class="metric-row"><span class="k">CPM</span><span class="v">₹102.81</span></div>
+              </div>
+              <div class="col">
+                <div class="col-label">Acquisition</div>
+                <div class="metric-row"><span class="k">Results</span><span class="v pos">45 Conv.</span></div>
+                <div class="metric-row"><span class="k">Cost/Res.</span><span class="v pos">₹332.24</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meta Ads Real Evidence Visuals -->
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="evidence-item">
+            <img src="assets/performance-marketing/meta-ads/creative-split-test.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Meta+Ads+Split+Test'" onclick="openLightbox(this.src)" alt="Meta Ads Creative Split Test">
+            <div class="evidence-cap">
+              <span class="tag-pill">Creative Testing</span>
+              <b>Image vs. Video Split Performance</b>
+              Direct creative comparison: Image ad delivered ₹186.09 cost/result, while Video ad drove volume (141K impr. / 34 conversions)[cite: 12].
+            </div>
+          </div>
+          <div class="evidence-item">
+            <img src="assets/performance-marketing/meta-ads/adsets-overview.jpg" onerror="this.src='https://placehold.co/600x380/071528/DAD5C9?text=Meta+Ads+Manager+Overview'" onclick="openLightbox(this.src)" alt="Meta Ads Manager Ad Sets Overview">
+            <div class="evidence-cap">
+              <span class="tag-pill">Campaign Portfolio</span>
+              <b>Multi-Adset Deployment &bull; 30-Day Snapshot</b>
+              Account-level management: Monkey 27 Aug (₹26.8K spent), Gaumata Seva (₹15.0K spent), Dog Surgery (₹6.0K spent)[cite: 11].
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLS & COMPETENCIES -->
+  <div class="section">
+    <div class="section-head">
+      <div class="platform-badge" style="background:var(--slate);">Ecosystem</div>
+      <div class="section-desc">Platforms, software, and operational competencies managed</div>
+    </div>
+    <div class="highlights">
+      <div class="h-card">
+        <div class="h-title">Marketplaces</div>
+        <p>Amazon Seller Central, Vendor Central, Flipkart, Myntra, AJIO, Meesho, GlowRoad.</p>
+      </div>
+      <div class="h-card">
+        <div class="h-title">D2C Platforms</div>
+        <p>Shopify Store Admin, Theme Customizer, WordPress/WooCommerce, Shiprocket, Fastrr.</p>
+      </div>
+      <div class="h-card">
+        <div class="h-title">Paid Media</div>
+        <p>Google Ads (PMax, Demand Gen, Search), Meta Ads Manager, GA4 Custom Audiences.</p>
+      </div>
+      <div class="h-card">
+        <div class="h-title">Analytics &amp; OMS</div>
+        <p>OMS Guru, Uniware, EasyEcom, Helium 10, Microsoft Excel, Adobe Photoshop.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="quote">&ldquo;Hands-on operational execution driving multichannel e-commerce growth.&rdquo;</div>
+    <div class="badges">AMAN KUMAR &bull; 2026 CAREER PORTFOLIO</div>
+  </footer>
+
+</div>
+
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Enlarged Work Evidence">
+</div>
+
+<script>
+  function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lb.classList.add('open');
+  }
+
+  function closeLightbox() {
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('open');
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+</script>
+</body>
+</html>
